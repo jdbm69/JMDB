@@ -1,0 +1,40 @@
+//globals
+@import './globals.scss';
+
+//components
+@import './components/navigation';
+@import './components/movieCard';
+@import './components/searchBar';
+@import './components/circularProgressBar';
+@import './components/carousel';
+@import './components/icon';
+@import './components/trailer';
+@import './components/casting';
+@import './components/socialMedia';
+@import './components/media';
+@import './components/modalMedia';
+@import './components/recommendedMovies';
+@import './components/personWorks';
+@import './components/profileCircle';
+@import './components/usersPanel';
+@import './components/backgroundProfile';
+@import './components/profileMenuCont';
+@import './components/favoriteMovieCard';
+@import './components/watchListMovieCard';
+@import './components/ratingMovieCard';
+@import './components/loadingPage';
+
+//pages
+@import './pages/home';
+@import './pages/movieDetails';
+@import './pages/castingDetails';
+@import './pages/mediaDetails';
+@import './pages/person';
+@import './pages/searchPage';
+@import './pages/movie';
+@import './pages/persons';
+@import './pages/login';
+@import './pages/profile';
+
+//variables
+@import './variables';

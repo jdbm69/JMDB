@@ -1,0 +1,27 @@
+.circular-progress-bar {
+  position: relative;
+  background-color: black;
+  border-radius: 50%;
+  bottom: 5%;
+  left: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .progress-ring {
+    .progress-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .circular-progress-bar {
+    bottom: 8%;
+    .progress-ring {
+      .progress-text {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.container-carousel {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7rem;
+  .carousel {  
+    .slides {
+      display: flex;
+      gap: 2rem;
+    }
+    .slides.next {
+      animation: slideNext 1s forwards;
+    }
+    .slides.prev {
+      animation: slidePrev 1s forwards;
+    }
+  }
+  .prev-button {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid $base-color;
+    transition: 200ms linear 25ms;
+    animation: fadeIn 2s;
+  }
+  .next-button {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid $base-color;
+    transition: 200ms linear 25ms;
+    animation: fadeIn 2s;
+  }
+  .next-button:hover {
+    cursor: pointer;
+    border-left: 20px solid $base-color-car;
+  }
+  .prev-button:hover {
+    cursor: pointer;
+    border-right: 20px solid $base-color-car;
+  }
+}
+  
+@keyframes slideNext {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
+  
+@keyframes slidePrev {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .container-carousel {
+    gap: 0.5rem;
+    margin-bottom: 4rem;
+    .carousel {  
+      .slides {
+        gap: 0.5rem;
+      }
+    }
+    .prev-button {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid $base-color;
+    }
+    .next-button {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid $base-color;
+    }
+    .next-button:hover {
+      border-left: 10px solid $base-color-car;
+    }
+    .prev-button:hover {
+      border-right: 10px solid $base-color-car;
+    }
+  }
+}

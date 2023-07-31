@@ -1,0 +1,23 @@
+.recom-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 5rem;
+    align-items: center;
+    h3 {
+        width: 60%;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .recom-cont {
+        gap: 1rem;
+        padding-top: 3rem;
+        h3 {
+            width: 90%;
+            font-size: 0.8rem;
+        }
+    }
+}

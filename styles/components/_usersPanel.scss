@@ -1,0 +1,200 @@
+.users-panel {
+    padding-left: 2rem;
+    display: flex;
+    gap: 1rem;
+    .popover {
+        position: relative;
+        display: inline-block;
+        .active {
+            background-color: $base-color;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 3rem;
+            svg {
+                width: 0.8rem;
+                height: 0.8rem;
+                fill: white;
+                transition: 200ms linear 25ms;
+            }
+        }
+        .active:hover {
+            cursor: pointer;
+        }
+        .desactive {
+            background-color: $base-color;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 3rem;
+            svg {
+                width: 0.8rem;
+                height: 0.8rem;
+                fill: $base-color-car;
+                transition: 200ms linear 25ms;
+            }
+        }
+        .desactive:hover {
+            cursor: pointer;
+        }
+        .popover-content {
+            position: absolute;
+            bottom: -80%;
+            left: -100%;
+            padding: 0.5rem;
+            text-align: center;
+            width: 8rem;
+            background-color: $base-color;
+            font-size: 0.8rem;
+            color: white;
+            border-radius: 0.7rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 1s;
+        }
+    }
+    .popover:hover .popover-content {
+        visibility: visible;
+        opacity: 1;
+    }
+    .value {
+        z-index: 100;
+        background-color: $base-color;
+        border-radius: 0.7rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 150%;
+        top: -30%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        animation: slideInRight 1s;
+        .input {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            p {
+                color: white;
+            }
+            input[type="range"] {
+                -webkit-appearance: none;
+                background-color: white;
+                height: 0.2rem;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                 height: 1.2rem; 
+                 width: 1.2rem; 
+                background-color: white;
+                border: 3px solid $base-color;
+                border-radius: 50%;
+            }
+        }
+        button {
+            background-color: white;
+            width: 50%;
+            border-radius: 0.5rem;
+            color: $base-color;
+            transition: 200ms linear 25ms;
+            border: 2px solid $base-color;
+            padding: 0.2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            svg {
+                fill: $base-color;
+                transition: 200ms linear 25ms;
+                width: 0.8rem;
+                height: 0.8rem;
+            }
+        }
+        button:hover {
+            background-color: $base-color;
+            color: white;
+            cursor: pointer;
+            border: 2px solid white;
+            svg {
+                fill: white;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .users-panel {
+        padding-left: 0.5rem;
+        gap: 0.5rem;
+        .popover {
+            .active {
+                height: 1.5rem;
+                width: 1.5rem;
+                svg {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+            }
+            .desactive {
+                height: 1.5rem;
+                width: 1.5rem;
+                svg {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+            }
+            .popover-content {
+                bottom: -120%;
+                left: -25%;
+                padding: 0.25rem;
+                width: 2rem;
+                font-size: 0.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+        .value {
+            border-radius: 0.5rem;
+            left: -200%;
+            top: 110%;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            width: 5rem;
+            .input {
+                gap: 0.25rem;
+                p {
+                    font-size: 0.5rem;
+                }
+                input[type="range"] {
+                    height: 0.1rem;
+                    width: 90%;
+                }
+                input[type="range"]::-webkit-slider-thumb {
+                    height: 0.8rem; 
+                    width: 0.8rem; 
+                    border: 1px solid $base-color;
+                }
+            }
+            button {
+                width: 60%;
+                border-radius: 0.25rem;
+                border: 1px solid $base-color;
+                padding: 0.1rem 0.25;
+                gap: 0.2rem;
+                font-size: 0.5rem;
+                height: 1rem;
+                svg {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}

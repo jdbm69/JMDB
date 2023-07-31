@@ -1,0 +1,141 @@
+.favorite-card {
+    width: 70%;
+    height: 12rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+    img {
+        width: 9rem;
+        height: 100%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+    .info {
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        h2 {
+            font-size: 1.3rem;
+            transition: 100ms linear 25ms;
+        }
+        h2:hover {
+            color: $base-color;
+        }
+        .info2 {
+            display: flex;
+            gap: 3rem;
+            font-size: 0.9rem;
+        }
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5rem 0 0;
+        .cir {
+            width: 4rem;
+        }
+        .popover {
+            position: relative;
+            display: inline-block;
+            button {
+                background-color: $base-color;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3rem;
+                width: 3rem;
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    fill: white;
+                    transition: 200ms linear 25ms;
+                }
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            .popover-content {
+                position: absolute;
+                bottom: -50%;
+                left: -90%;
+                padding: 0.5rem;
+                text-align: center;
+                width: 8rem;
+                background-color: $base-color;
+                font-size: 0.8rem;
+                color: white;
+                border-radius: 0.7rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 1s;
+            }
+        }
+        .popover:hover .popover-content {
+            visibility: visible;
+            opacity: 1;
+        }  
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .favorite-card {
+        width: 90%;
+        height: 7rem;
+        border-radius: 0.5rem;
+        img {
+            width: 4rem;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        .info {
+            padding-top: 0.25rem;
+            gap: 0;
+            justify-content: space-between;
+            h2 {
+                font-size: 0.8rem;
+            }
+            .info2 {
+                justify-content: start;
+                font-size: 0.6rem;
+                padding-right: 0.25rem;
+                gap: 1rem;
+            }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem 0.25rem 0;
+            .cir {
+                width: 2.5rem;
+            }
+            .popover {
+                button {
+                    height: 2rem;
+                    width: 2rem;
+                    svg {
+                        width: 0.8rem;
+                        height: 0.8rem;
+                    }
+                }
+                .popover-content {
+                    position: absolute;
+                    bottom: -60%;
+                    left: -70%;
+                    padding: 0.25rem;
+                    width: 4rem;
+                    font-size: 0.5rem;
+                    border-radius: 0.5rem;
+                }
+            }
+            .popover:hover .popover-content {
+                visibility: visible;
+                opacity: 1;
+            }  
+        }
+    }
+}

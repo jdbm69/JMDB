@@ -1,0 +1,228 @@
+.mediadet-cont {
+    padding-top: 7rem;
+    animation: fadeIn 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+    .back {
+        width: 100%;
+        height: 7rem;
+        background-color: rgba(139, 0, 0);
+        background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        .poster-name {
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            width: 70%;
+            gap: 1rem;
+            img {
+                height: 80%;
+            }
+            #info {
+                h2 {
+                    font-size: 1.8rem;
+                    padding-bottom: 0.5rem;
+                    color: white;
+                }
+                #view-more-button {
+                    display: flex;
+                    font-size: 1rem;
+                    gap: 0.2rem;
+                    align-items: center;
+                    transition: 100ms linear 25ms;
+                    animation: fadeIn 2s;
+                    color: rgb(211, 211, 211);
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                        transition: 100ms linear 25ms;
+                    }
+                }
+                #view-more-button:hover {
+                    cursor: pointer;
+                    color: $base-color;
+                    svg {
+                        fill: $base-color;
+                    }
+                }
+            }
+        }
+    }
+    .options-cont {
+        display: flex;
+        width: 70%;
+        padding-top: 2rem;
+        gap: 2rem;
+        .mediadet-options {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+            width: 20%;
+            height: 100%;
+            border-radius: 1rem;
+            padding: 1rem 0;
+            button {
+                padding: 1rem 0;
+                text-align: left;
+                padding-left: 10%;
+                font-size: 0.9rem;
+                transition: 200ms linear 25ms;
+            }
+            button:hover {
+                background-color: rgba(139, 0, 0);
+                background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+                color: white;
+                cursor: pointer;
+            }
+            #active {
+                background-color: rgba(139, 0, 0);
+                background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+                color: white;
+            }
+        }
+        .cont {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            #pos {
+                height: 25rem;
+                width: 15rem;
+                border-radius: 0.5rem;
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+                transition: transform 0.3s, filter 0.3s;
+            }
+            #bg {
+                height: 18rem;
+                width: 30rem;
+                border-radius: 0.5rem;
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+                transition: transform 0.3s, filter 0.3s;
+            }
+            .video-thumbnail {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s, filter 0.3s;
+                border-radius: 1rem;
+                svg {
+                    fill: black;
+                    width: 5%;
+                    position: absolute;
+                    transition: 200ms linear 25ms;
+                }
+                img {
+                    transition: 200ms linear 25ms;
+                    border-radius: 1rem;
+                }
+            }
+            .video-thumbnail:hover {
+                svg {
+                    fill: $base-color-car;
+                    width: 20%;
+                }
+            }
+            #pos:hover, #bg:hover, .video-thumbnail:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+            #pos:hover::after, #bg:hover::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 2px solid #fff;
+                box-sizing: border-box;
+                transform: translateX(-50%);
+                animation: moveImage 0.3s forwards;
+            }
+
+            
+        }
+    }
+}
+
+@keyframes moveImage {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mediadet-cont {
+        padding-top: 4rem;
+        .back {
+            width: 100%;
+            height: 4rem;
+            gap: 0.5rem;
+            .poster-name {
+                height: 5rem;
+                gap: 0.5rem;
+                img {
+                    height: 80%;
+                }
+                #info {
+                    h2 {
+                        font-size: 0.8rem;
+                        padding-bottom: 0.25rem;
+                    }
+                    #view-more-button {
+                        font-size: 0.6rem;
+                        gap: 0.1rem;
+                        svg {
+                            width: 0.6rem;
+                            height: 0.6rem;
+                        }
+                    }
+                }
+            }
+        }
+        .options-cont {
+            flex-direction: column;
+            width: 100%;
+            padding-top: 1rem;
+            gap: 1rem;
+            align-items: center;
+            .mediadet-options {
+                width: 50%;
+                button {
+                    padding: 0.5rem 0;
+                    padding-left: 5%;
+                    font-size: 0.6rem;
+                }
+            }
+            .cont {
+                width: 100%;
+                justify-content: center;
+                #pos {
+                    height: 15rem;
+                    width: 45%;
+                }
+                #bg {
+                    height: 15rem;
+                    width: 90%;
+                }
+                .video-thumbnail {
+                    svg {
+                        width: 10%;
+                    }
+                    img {
+                        width: 90%;
+                    }
+                }  
+            }
+        }
+    }
+    
+}

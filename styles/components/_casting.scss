@@ -1,0 +1,202 @@
+.cast-cont {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    #title-cast {
+        font-size: 1.5rem;
+        width: 60%;
+    }
+    .ni {
+        padding: 2rem;
+    }
+    .cast-list {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        .prev-button {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid $base-color;
+            animation: fadeIn 2s;
+            transition: 200ms linear 25ms;
+        }
+        .next-button {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid $base-color;
+            transition: 200ms linear 25ms;
+            animation: fadeIn 2s;
+        }
+        .next-button:hover {
+            cursor: pointer;
+            border-left: 20px solid $base-color-car;
+        }
+        .prev-button:hover {
+            cursor: pointer;
+            border-right: 20px solid $base-color-car;
+        }
+        #view-more-button {
+            display: flex;
+            font-size: 1rem;
+            gap: 0.2rem;
+            align-items: center;
+            transition: 100ms linear 25ms;
+            animation: fadeIn 2s;
+            svg {
+                width: 1rem;
+                height: 1rem;
+                padding-top: 4px;
+                transition: 100ms linear 25ms;
+            }
+        }
+        #view-more-button:hover {
+            cursor: pointer;
+            color: $base-color;
+            svg {
+                fill: $base-color;
+            }
+        }
+        .cast-item {
+            width: 12rem;
+            height: 25rem;
+            animation: flipInY 1s;
+            border-radius: 1.5rem;
+            box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.24);
+            transition: 200ms linear 25ms;
+            img {
+                width: 100%;
+                height: 75%;
+                border-top-left-radius: 1.5rem;
+                border-top-right-radius: 1.5rem;
+            }
+            .actor-info {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                padding-top: 0.5rem;
+                h3 {
+                    font-size: 1rem;
+                    padding: 0 0 0.3rem 1rem;
+                    transition: 200ms linear 25ms;
+                }
+                p {
+                    font-size: 0.85rem;
+                    padding: 0 0 0 1rem;
+                }
+            }
+        }
+        .cast-item:hover {
+            cursor: pointer;
+            background-color: rgba(139, 0, 0, 0.116);
+            h3 {
+                color: $base-color;
+            }
+        }
+    }
+    a {
+        p {
+            font-size: 1.2rem;
+            transition: 100ms linear 25ms;
+            display: flex;
+            gap: 0.2rem;
+            align-items: center;
+            svg {
+                width: 1rem;
+                height: 1rem;
+                padding-top: 6px;
+                transition: 100ms linear 25ms;
+            }
+        }
+        p:hover {
+            color: rgb(109, 109, 109);
+            svg {
+                fill: rgb(109, 109, 109);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cast-cont {
+        #title-cast {
+            font-size: 0.8rem;
+            width: 90%;
+        }
+        .cast-list {
+            gap: 0.5rem;
+            .prev-button {
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid $base-color;
+            }
+            .prev-button-act {
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid $base-color;
+            }
+            .next-button {
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-left: 10px solid $base-color;
+            }
+            .next-button:hover {
+                border-left: 10px solid $base-color-car;
+            }
+            .prev-button:hover {
+                border-right: 10px solid $base-color-car;
+            }
+            .prev-button-act:hover {
+                border-right: 10px solid $base-color-car;
+            }
+            #view-more-button {
+                font-size: 0.5rem;
+                gap: 0;
+                flex-direction: column;
+                svg {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    padding-top: 0;
+                }
+            }
+            .cast-item {
+                width: 6rem;
+                height: 14rem;
+                border-radius: 1rem;
+                img {
+                    height: 65%;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                }
+                .actor-info {
+                    padding-top: 0.25rem;
+                    h3 {
+                        font-size: 0.7rem;
+                        padding: 0 0 0.1rem 0.5rem;
+                    }
+                    p {
+                        font-size: 0.4rem;
+                        padding: 0 0 0 0.5rem;
+                    }
+                }
+            }
+        }
+        a {
+            p {
+                font-size: 0.6rem;
+                gap: 0.1rem;
+                svg {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    padding-top: 2px;
+                }
+            }
+        }
+    }
+}

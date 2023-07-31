@@ -1,0 +1,134 @@
+.movie-cont {
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    .form-movie-list {
+        animation: fadeIn 1s;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        padding-bottom: 5rem;
+        width: 70%;
+        .movies-list {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .form {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            label {
+                font-size: 1.2rem;
+            }
+            select {
+                width: 100%;
+                padding: 1rem 0;
+                font-size: 0.9rem;
+                background-color: rgba(139, 0, 0);
+                background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+                padding-left: 10%;
+                font-size: 0.9rem;
+                transition: 200ms linear 25ms;
+                color: white;
+                border-radius: 1rem;
+                border: none;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                margin-bottom: 1rem;
+            }
+            select:focus {
+                outline: none;
+            }
+            option {
+                background-color: $base-color;
+                color: white;
+            }
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            color: $base-color;
+            font-size: 1rem;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+            padding: 0.5rem 1rem;
+            transition: 200ms linear 25ms;
+            svg {
+                fill: $base-color;
+                width: 1rem;
+                height: 1rem;
+                transition: 200ms linear 25ms;
+            }
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: $base-color;
+            color: wheat;
+            svg {
+                fill: white;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .movie-cont {
+        padding-top: 4rem;
+        .form-movie-list {
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2rem;
+            .movies-list {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            .form {
+                width: 90%;
+                flex-direction: row;
+                label {
+                    font-size: 0.6rem;
+                }
+                select {
+                    width: 100%;
+                    padding: 0.5rem 0;
+                    font-size: 0.6rem;
+                    padding-left: 5%;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        .pagination {
+            gap: 1rem;
+            font-size: 0.6rem;
+            button {
+                gap: 0.25rem;
+                font-size: 0.6rem;
+                padding: 0.25rem 0.5rem;
+                svg {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                }
+            }
+        }
+    }
+}

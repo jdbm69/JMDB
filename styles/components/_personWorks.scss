@@ -1,0 +1,75 @@
+.person-wors-cont {
+    padding: 5rem 0 2rem 3rem;
+    .cont {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        ul {
+            box-shadow: 3px 3px 20px 3px rgba(0, 0, 0, 0.24);
+            li {
+                border-bottom: 1px solid rgba(126, 126, 126, 0.26);
+                padding: 1.5rem;
+                transition: 200ms linear 25ms;
+                #title {
+                    padding-left: 1.5rem;
+                }
+                #work {
+                    padding-left: 4rem;
+                }
+                p, span {
+                    transition: 200ms linear 25ms;
+                }
+            }
+            li:hover {
+                background-color: $base-color;
+                p {
+                    color: white;
+                }
+                span {
+                    color: white;
+                }
+            }
+        }
+        #cont-2 {
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px)  {
+    .person-wors-cont {
+        padding: 2rem 0;
+        .cont {
+            gap: 1rem;
+            h3 {
+                font-size: 0.8rem;
+            }
+            ul {
+                li {
+                    padding: 0.8rem;
+                    font-size: 0.8rem;
+                    #title {
+                        padding-left: 1rem;
+                        font-size: 0.8rem;
+                    }
+                    #work {
+                        padding-left: 3rem;
+                        font-size: 0.6rem;
+                    }
+                }
+                li:hover {
+                    background-color: $base-color;
+                    p {
+                        color: white;
+                    }
+                    span {
+                        color: white;
+                    }
+                }
+            }
+            #cont-2 {
+                margin-top: 1rem;
+            }
+        }
+    }
+}

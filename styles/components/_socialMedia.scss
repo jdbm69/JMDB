@@ -1,0 +1,89 @@
+.social-media {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7rem 10rem 3rem 8rem;
+    .info {
+        display: flex;
+        gap: 4rem;
+        .info-det {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+    .icons {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+        .popover {
+            position: relative;
+            display: inline-block;
+            svg {
+                width: 2rem;
+                height: 2rem;
+                fill: rgba(0, 0, 0, 0.719);
+                transition: 200ms linear 25ms;
+            }
+            svg:hover {
+                fill: $base-color
+            }
+            .popover-content {
+                position: absolute;
+                bottom: 120%;
+                left: -110%;
+                padding: 0.5rem;
+                text-align: center;
+                width: 6rem;
+                background-color: $base-color;
+                font-size: 0.8rem;
+                color: white;
+                border-radius: 0.7rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 1s;
+            }
+        }
+        .popover:hover .popover-content {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media {
+        padding: 0;
+        padding-top: 3rem;
+        .info {
+            gap: 1rem;
+            font-size: 0.6rem;
+            flex-direction: column;
+            .info-det {
+                gap: 0.25rem;
+            }
+        }
+        .icons {
+            gap: 0.5rem;
+            .popover {
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                }
+                .popover-content {
+                    position: absolute;
+                    bottom: 70%;
+                    left: -110%;
+                    padding: 0.25rem;
+                    width: 3rem;
+                    font-size: 0.5rem;
+                    border-radius: 0.5rem;
+                }
+            }
+            .popover:hover .popover-content {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+.search-bar {
+  width: 75%;
+  height: 20rem;
+  background-image: url('../../public/back.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  animation: moveBackground 50s linear infinite;
+  form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(238, 177, 11, 0.116);
+    input {
+      width: 70%;
+      height: 20%;
+      border: none;
+      outline: none;
+      border-radius: 1.5rem;
+      padding-left: 3rem;
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.507);
+    }
+    .bi {
+      position: absolute;
+      left: 10%;
+      color: rgba(0, 0, 0, 0.507);
+    }
+    ::placeholder {
+      color: rgba(0, 0, 0, 0.507);
+    }
+    #animated-button {
+      position: relative;
+      right: 10%;
+      height: 20%;
+      width: 10%;
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      font-size: 1rem;
+      transition: 200ms linear 25ms;
+      overflow: hidden;
+      z-index: 1;
+      color: white;
+    }
+    #animated-button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, $base-color-car 0%, rgb(49, 29, 29) 25%, $base-color 50%, rgb(49, 29, 29) 75%, $base-color-car 100%);
+      background-size: 150% 150%;
+      animation: moveLines 10s linear infinite;
+      z-index: -1;
+    }
+    #animated-button:hover {
+      cursor: pointer;
+      color: rgb(192, 149, 149);;
+    }     
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes moveLines {
+  0% {
+    transform: translate(-25%, -25%);
+  }
+  50% {
+    transform: translate(25%, 25%);
+  }
+  100% {
+    transform: translate(-25%, -25%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .search-bar {
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 2rem;
+    form {
+      input {
+        width: 90%;
+        margin-left: 5%;
+        height: 15%;
+        border-radius: 1.5rem;
+        padding-left: 1.5rem;
+        font-size: 1rem;
+      }
+      ::placeholder {
+        font-size: 0.8rem;
+      }
+      .bi {
+        left: 7%;
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+      #animated-button {
+        right: 5%;
+        height: 15%;
+        width: 15%;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        font-size: 0.8rem;
+      }    
+    }
+  }
+}

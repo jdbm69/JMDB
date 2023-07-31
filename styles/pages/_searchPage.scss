@@ -1,0 +1,257 @@
+.pagin-cont {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    .search-cont {
+        padding-top: 2rem;
+        animation: fadeIn 1s;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5rem;
+        width: 70%;
+        .buttons-list {
+            display: flex;
+            width: 100%;
+            padding-top: 2rem;
+            gap: 2rem;
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+                width: 20%;
+                height: 100%;
+                border-radius: 1rem;
+                padding: 1rem 0;
+                button {
+                    padding: 1rem 0;
+                    text-align: left;
+                    padding-left: 10%;
+                    font-size: 0.9rem;
+                    transition: 200ms linear 25ms;
+                }
+                button:hover {
+                    background-color: rgba(139, 0, 0);
+                    background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+                    color: white;
+                    cursor: pointer;
+                }
+                #active {
+                    background-color: rgba(139, 0, 0);
+                    background-image: linear-gradient(to right, rgba(139, 0, 0, 0.13), white);
+                    color: white;
+                }
+            }
+            .list {
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                .person-item {
+                    width: 12rem;
+                    height: 25rem;
+                    animation: flipInY 1s;
+                    border-radius: 1.5rem;
+                    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.24);
+                    transition: 200ms linear 25ms;
+                    img {
+                        width: 100%;
+                        height: 75%;
+                        border-top-left-radius: 1.5rem;
+                        border-top-right-radius: 1.5rem;
+                    }
+                    .person-info {
+                        display: flex;
+                        flex-direction: column;
+                        width: 90%;
+                        padding-top: 0.5rem;
+                        h3 {
+                            font-size: 1rem;
+                            padding: 0 0 0.3rem 1rem;
+                            transition: 200ms linear 25ms;
+                        }
+                    }
+                }
+                .person-item:hover {
+                    cursor: pointer;
+                    background-color: rgba(139, 0, 0, 0.116);
+                    h3 {
+                        color: $base-color;
+                    }
+                }
+            }
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            color: $base-color;
+            font-size: 1rem;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+            padding: 0.5rem 1rem;
+            transition: 200ms linear 25ms;
+            svg {
+                fill: $base-color;
+                width: 1rem;
+                height: 1rem;
+                transition: 200ms linear 25ms;
+            }
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: $base-color;
+            color: wheat;
+            svg {
+                fill: white;
+            }
+        }
+    }
+    form  {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 70%;
+        input {
+            width: 90%;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-left: 3rem;
+            font-size: 1rem;
+            color: rgba(0, 0, 0, 0.507);
+            border-bottom: 1px solid $base-color;
+        }
+        .bi {
+            position: absolute;
+            left: 15%;
+            color: rgba(0, 0, 0, 0.507);
+        }
+        ::placeholder {
+            color: rgba(0, 0, 0, 0.507);
+        }
+        #animated-button {
+            position: relative;
+            width: 10%;
+            height: 110%;
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            font-size: 1rem;
+            transition: 200ms linear 25ms;
+            overflow: hidden;
+            z-index: 1;
+            color: white;
+          }
+          #animated-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, $base-color-car 0%, rgb(49, 29, 29) 25%, $base-color 50%, rgb(49, 29, 29) 75%, $base-color-car 100%);
+            background-size: 150% 150%;
+            animation: moveLines 10s linear infinite;
+            z-index: -1;
+          }
+          #animated-button:hover {
+            cursor: pointer;
+            color: rgb(192, 149, 149);;
+          }  
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .pagin-cont {
+        .search-cont {
+            padding-top: 0;
+            gap: 1rem;
+            padding-bottom: 2rem;
+            width: 100%;
+            .buttons-list {
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                .buttons {
+                    width: 50%;
+                    button {
+                        padding: 0.5rem 0;
+                        padding-left: 5%;
+                        font-size: 0.6rem;
+                    }
+                }
+                .list {
+                    width: 100%;
+                    justify-content: center;
+                    .person-item {
+                        width: 6rem;
+                        height: 14rem;
+                        border-radius: 1rem;
+                        img {
+                            border-top-left-radius: 1rem;
+                            border-top-right-radius: 1rem;
+                            height: 65%;
+                        }
+                        .person-info {
+                            padding-top: 0.25rem;
+                            h3 {
+                                font-size: 0.8rem;
+                                padding: 0 0 0.2rem 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pagination {
+            gap: 1rem;
+            font-size: 0.6rem;
+            button {
+                gap: 0.25rem;
+                font-size: 0.6rem;
+                padding: 0.25rem 0.5rem;
+                svg {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                }
+            }
+        }
+        form  {
+            height: 1.5rem;
+            width: 90%;
+            input {
+                width: 90%;
+                padding-left: 1rem;
+                font-size: 1rem;
+            }
+            .bi {
+                position: absolute;
+                left: 5%;
+                width: 0.6rem;
+                height: 0.6rem;
+            }
+            ::placeholder {
+                font-size: 0.8rem;
+            }
+            #animated-button {
+                width: 20%;
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                font-size: 0.8rem;
+            } 
+        }
+    }
+}

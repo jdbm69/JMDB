@@ -1,0 +1,28 @@
+.loading-cont {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.808);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    svg {
+        width: 10%;
+        height: 10%;
+        fill: white;
+        animation: changeColor 1s infinite alternate;
+    }
+}
+
+
+@keyframes changeColor {
+    0% {
+      fill: white;
+    }
+    100% {
+      fill: $base-color;
+    }
+}
