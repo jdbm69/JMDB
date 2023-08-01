@@ -7,6 +7,12 @@ export const metadata = {
   description: 'Find your favorites movies',
 }
 
+export const metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 export default function RootLayout({ children }) {
   
   return (
@@ -16,6 +22,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <Navigation />
