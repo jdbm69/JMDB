@@ -29,7 +29,7 @@ export function ProfileMenu ({ setShowProfileMenu }) {
     
   useEffect(() => {
     getName();
-  })
+  }, [])
 
   return (
     <div className="profile-menu-cont">
