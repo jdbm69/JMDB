@@ -37,6 +37,7 @@ const Access = () => {
         setIsLoading(true);
         if (!isLogIn && password !== confirmPassword) {
           setError('Passwords do not match');
+            setIsLoading(false);
           return;
         }
       
@@ -49,7 +50,8 @@ const Access = () => {
         const data = await response.json();
       
         if (data.detail) {
-          setError(data.detail);
+            setError(data.detail);
+            setIsLoading(false);
         } else {
           setCookie('Email', data.email);
           setCookie('AuthToken', data.token);
