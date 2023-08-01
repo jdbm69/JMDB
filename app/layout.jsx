@@ -5,13 +5,10 @@ import 'animate.css';
 export const metadata = {
   title: 'JMovie Data Base (JMDB)',
   description: 'Find your favorites movies',
-}
-
-export const metadata = {
   icons: {
     icon: '/favicon.ico',
-  },
-};
+  }
+}
 
 export default function RootLayout({ children }) {
   
