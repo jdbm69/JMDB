@@ -23,7 +23,7 @@ const CircularProgressBar = ({ progress }) => {
   const offset = circumference + (progress / 100) * circumference;
 
   return (
-    <div className="circular-progress-bar" width={isMobile ? 40 : 60} height={isMobile ? 40 : 60}>
+    <div className="circular-progress-bar" id={isMobile? 'mo' : 'no'} height={isMobile ? 40 : 60}>
       <svg className="progress-ring" width={isMobile ? 40 : 60} height={isMobile ? 40 : 60} viewBox={isMobile ? '0 0 40 40' : '0 0 60 60'}>
         <circle
           className="progress-ring-circle"
