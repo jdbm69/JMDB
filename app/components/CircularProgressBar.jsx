@@ -24,7 +24,7 @@ const CircularProgressBar = ({ progress }) => {
 
   return (
     <div className="circular-progress-bar" width={isMobile ? 40 : 60} height={isMobile ? 40 : 60}>
-      <svg className="progress-ring" width={isMobile ? 40 : 60} height={isMobile ? 40 : 60}>
+      <svg className="progress-ring" width={isMobile ? 40 : 60} height={isMobile ? 40 : 60} viewBox={isMobile ? '0 0 40 40' : '0 0 60 60'}>
         <circle
           className="progress-ring-circle"
           stroke="rgba(99, 99, 99, 0.46)"
